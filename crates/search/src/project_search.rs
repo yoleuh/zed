@@ -462,8 +462,8 @@ impl Item for ProjectSearchView {
         true
     }
 
-    fn is_dirty(&self, cx: &AppContext) -> bool {
-        self.results_editor.read(cx).is_dirty(cx)
+    fn is_dirty(&self, _: &AppContext) -> bool {
+        false
     }
 
     fn has_conflict(&self, cx: &AppContext) -> bool {
