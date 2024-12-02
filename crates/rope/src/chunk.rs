@@ -268,7 +268,7 @@ impl<'a> ChunkSlice<'a> {
         };
         let row = (self.newlines & mask).count_ones();
         let newline_ix = u128::BITS - (self.newlines & mask).leading_zeros();
-        let column = (offset - newline_ix as usize) as u32;
+        let column = ((self.chars & mask) >> newline_ix).count_ones();
         Point::new(row, column)
     }
 
